@@ -58,7 +58,7 @@ export const DataProvider = ({ children }) => {
 
     try {
       const response = await api.post(
-        "https://zcs-d-be.onrender.com/student/login",
+        "https://cabe-zcsd.onrender.com/student/login",
         data
       );
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
@@ -96,7 +96,7 @@ export const DataProvider = ({ children }) => {
 
     try {
       const response = await api.post(
-        "https://zcs-d-be.onrender.com/student/signup",
+        "https://cabe-zcsd.onrender.com/student/signup",
         data
       );
       toast.success(response.data.message);
@@ -121,7 +121,7 @@ export const DataProvider = ({ children }) => {
 
     try {
       const response = await api.put(
-        "https://zcs-d-be.onrender.com/student/update",
+        "https://cabe-zcsd.onrender.com/student/update",
         data
       );
       const student = response.data.matchedStudent;
@@ -149,7 +149,7 @@ export const DataProvider = ({ children }) => {
 
     e.preventDefault();
     try {
-      api.patch(`https://zcs-d-be.onrender.com/student/confirm/${resetToken}`);
+      api.patch(`https://cabe-zcsd.onrender.com/student/confirm/${resetToken}`);
       toast.success("Account confirmed Successfully");
       setIsLoading(false);
       setTimeout(() => {
@@ -170,7 +170,7 @@ export const DataProvider = ({ children }) => {
     setIsLoading(true);
 
     try {
-      await api.put("https://zcs-d-be.onrender.com/student/forgot", data);
+      await api.put("https://cabe-zcsd.onrender.com/student/forgot", data);
       toast.success("Reset link send to your mail");
       setIsLoading(false);
       setTimeout(() => {
@@ -192,7 +192,7 @@ export const DataProvider = ({ children }) => {
 
     try {
       const response = await api.patch(
-        `https://zcs-d-be.onrender.com/student/reset/${resetToken}`,
+        `https://cabe-zcsd.onrender.com/student/reset/${resetToken}`,
         data
       );
       setResetToken("");
